@@ -1,17 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import WebFont from 'webfontloader';
+import Contenedor from './elementos/Contenedor';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  WebFont.load({
+    google: {
+      families: ['Work Sans: 400,500,700', 'sans-Serif']
+    }
+  });
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+const Index = () => {
+  return (
+    <Contenedor>
+      <App />
+    </Contenedor>
+    
+  );
+}
+
+ReactDOM.render(<Index />, document.getElementById('root'));
+
+
